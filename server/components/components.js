@@ -78,7 +78,7 @@ module.exports = {
       const coordinates = `${latitude},${longitude}`;
 
       const response = await axios.get(
-        "https://api.prokerala.com/v2/astrology/",
+        "https://api.prokerala.com/v2/astrology/inauspicious-period",
         {
           params: {
             ayanamsa, // Lahiri = 1, Raman = 3, KP = 5

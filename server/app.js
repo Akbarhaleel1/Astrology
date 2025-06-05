@@ -57,9 +57,13 @@ app.get("/inauspicious-period", async (req, res) => {
 
   try {
       const accessToken = await getAccessToken();
-      const kundliData = await getInauspiciousPeriod(accessToken, datetime, latitude, longitude);
+      const kundliDatas = await getInauspiciousPeriod(accessToken, datetime, latitude, longitude);
+      const {kundliData,auspiciousPeriod} = kundliDatas
       
       console.log("Kundli Data:", kundliData);
+auspiciousPeriod.muhurat.forEach((item, index) => {
+  console.log(`muhurat[${index}]:`, item);
+});
       res.status(200).json({ data: kundliData });
 
   } catch (error) {

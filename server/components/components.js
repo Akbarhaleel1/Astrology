@@ -92,6 +92,23 @@ module.exports = {
         }
       );
 
+      const auspiciousPeriod = await axios.get(
+        "https://api.prokerala.com/v2/astrology/auspicious-period",
+        {
+          params: {
+            ayanamsa, // Lahiri = 1, Raman = 3, KP = 5
+            coordinates,
+            datetime: formattedDate, // Pass ISO formatted datetime
+            la: language, // Language option
+          },
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+
+      console.log('auspiciousPeriod', auspiciousPeriod)
+
       console.log("Fetched Data:", response.data.data.muhurat);
       console.log("Fetched Data:" );
       response.data.data.muhurat.forEach(item => {

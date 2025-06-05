@@ -4,6 +4,7 @@ const { getAccessToken } = require("./contorller");
 const { getKundliData, getCalendarData, getInauspiciousPeriod } = require("./components/components");
 const app = express();
 const cors = require('cors');
+const { default: axios } = require("axios");
 app.use(cors());
 
 const PORT = 3001;

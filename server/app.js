@@ -232,6 +232,7 @@ function formatDateWithOffset(date) {
 }
 
 async function callKundliApi(accessToken, params) {
+  console.log('callKundliApi is working')
   const response = await axios.get('https://api.prokerala.com/v2/astrology/kundli', {
     params: {
       datetime: params.datetime,
@@ -242,6 +243,7 @@ async function callKundliApi(accessToken, params) {
     },
     headers: { Authorization: `Bearer ${accessToken}` },
   });
+  console.log('callKundliApi response', response)
   return response.data.data; // Adjust based on actual response
 }
 

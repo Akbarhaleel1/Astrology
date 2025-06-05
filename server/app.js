@@ -59,11 +59,19 @@ app.get("/inauspicious-period", async (req, res) => {
       const accessToken = await getAccessToken();
       const kundliDatas = await getInauspiciousPeriod(accessToken, datetime, latitude, longitude);
       const {kundliData,auspiciousPeriod} = kundliDatas
-      
-      console.log("Kundli Data:", kundliData);
-auspiciousPeriod.muhurat.forEach((item, index) => {
-  console.log(`muhurat[${index}]:`, item);
+      const amritKaal = muhurat.find(m => m.name === 'Amrit Kaal');
+
+kundliData.forEach((item, index) => {
+  if (item.name === 'Gulika') {
+    kundliData[index] = {
+      id: item.id, // Keep original ID if needed, or use amritKaal.id
+      name: amritKaal.name,
+      type: amritKaal.type,
+      period: amritKaal.period
+    };
+  }
 });
+      console.log('kundliData', kundliData)
       res.status(200).json({ data: kundliData });
 
   } catch (error) {

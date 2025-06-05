@@ -6,6 +6,7 @@ const app = express();
 const cors = require('cors');
 const { default: axios } = require("axios");
 const cache = require('./utils/cache');
+const { validationResult } = require('express-validator');
 
 app.use(cors());
 

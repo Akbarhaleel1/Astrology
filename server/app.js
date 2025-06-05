@@ -1,7 +1,7 @@
 
 const express = require("express");
 const { getAccessToken } = require("./contorller");
-const { getKundliData, getCalendarData, getInauspiciousPeriod } = require("./components/components");
+const { getKundliData, getCalendarData, getInauspiciousPeriod, getDailyHoroscope } = require("./components/components");
 const app = express();
 const cors = require('cors');
 const { default: axios } = require("axios");

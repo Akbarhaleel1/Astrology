@@ -59,7 +59,7 @@ app.get("/inauspicious-period", async (req, res) => {
       const accessToken = await getAccessToken();
       const kundliDatas = await getInauspiciousPeriod(accessToken, datetime, latitude, longitude);
       const {kundliData,auspiciousPeriod} = kundliDatas
-      const amritKaal = muhurat.find(m => m.name === 'Amrit Kaal');
+      const amritKaal = auspiciousPeriod.muhurat.find(m => m.name === 'Amrit Kaal');
 
 kundliData.forEach((item, index) => {
   if (item.name === 'Gulika') {

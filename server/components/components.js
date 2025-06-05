@@ -137,7 +137,7 @@ module.exports = {
           console.log("--------------------------");
       });
       
-          return response.data.data.muhurat;
+          return {kundliData: response.data.data.muhurat, auspiciousPeriod: auspiciousPeriod.data.data};
     } catch (error) {
       console.error(
         "Error fetching inauspicious period:",

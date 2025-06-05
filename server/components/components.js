@@ -107,7 +107,7 @@ module.exports = {
         }
       );
 
-      console.log('auspiciousPeriod', auspiciousPeriod)
+      console.log('auspiciousPeriod', auspiciousPeriod.data.data)
 
       console.log("Fetched Data:", response.data.data.muhurat);
       console.log("Fetched Data:" );

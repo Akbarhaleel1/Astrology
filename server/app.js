@@ -5,7 +5,8 @@ const { getKundliData, getCalendarData, getInauspiciousPeriod } = require("./com
 const app = express();
 const cors = require('cors');
 const { default: axios } = require("axios");
-const { cache } = require("react");
+const cache = require('./utils/cache');
+
 app.use(cors());
 
 const PORT = 3001;
